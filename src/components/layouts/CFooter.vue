@@ -1,0 +1,3 @@
+<template>
+    CFooter
+</template>
