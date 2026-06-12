@@ -10,6 +10,6 @@
     </div>
 </template>
 <script setup lang="ts">
-import CHeader from '@/components/layouts/CHeader.vue';
-import CFooter from '@/components/layouts/CFooter.vue';
+import CHeader from '@/assets/components/layouts/CHeader.vue';
+import CFooter from '@/assets/components/layouts/CFooter.vue';
 </script>
