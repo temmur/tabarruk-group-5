@@ -15,7 +15,6 @@ class="rounded-lg cursor-pointer"
     </template>
     <script setup lang="ts">
 import {defineProps} from 'vue';
-
     const props = defineProps<{
         variant?: 'primary' | 'secondary' | 'tertiary',
         text: string 

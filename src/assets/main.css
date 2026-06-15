@@ -1,3 +1,13 @@
-@import "tailwindcss"
 @import './icomoon/style.css';
 @import './font/font.css';
+@import "tailwindcss";
+
+body{
+    background-color: #07091C;
+}
+
+.container{
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+}
