@@ -1,5 +1,5 @@
 <template>
-   <div class="bg-[url('https://i.pinimg.com/originals/79/ff/17/79ff17f6e2b2f8385ff63985e9fccbdb.jpg?nii=t')] bg-cover bg-center">
+   <div class="bg-[url('')] bg-cover bg-center">
      <h1>Home page</h1>
 <Swiper
     :modules="[Autoplay]"
