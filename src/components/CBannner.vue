@@ -80,7 +80,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  if (timer) clearInterval(timer)
+  i f (timer) clearInterval(timer)
 })
 </script>
 <template>
