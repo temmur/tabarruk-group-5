@@ -1,6 +1,7 @@
 <template>
-    <div class="bg-[url('./images/vectors/Vector(6).svg')] flex">
-    <div class="m-25 p-13">
+    <div class=" bg-[url('./images/vectors/Vector(6).svg')]">
+   <div class="container flex gap-20">
+     <div class=" flex flex-col justify-center">
         <div>
             <h1 class="text-white text-4xl font-semibold  mb-7 border-b-2 border-red-500 inline-block p-2">
                 Biz haqimizda
@@ -92,7 +93,7 @@
         </div>
     </div>
     </div>
-    <div class="relative w-full max-w-6xl mx-auto py-10 overflow-hidden m-25 pr-40 ">
+    <div class="relative w-full max-w-6xl mx-auto py-10 overflow-hidden mt-25 pr-40 mb-10">
     <div class="flex gap-4 transition-transform duration-500 ease-in-out" 
          :style="{ transform: `translateX(-${currentIndex * 20}%)` }">
       
@@ -114,13 +115,14 @@
     </button>
   </div>
     </div>
-    <div class="grid grid-cols-3  ">
-       <CAboutcard class="m-10  " v-for="(el, idx) in statistic"
+    <div class="grid grid-cols-4 container gap-4">
+       <CAboutcard class="w-full" v-for="(el, idx) in statistic"
       :key="idx"
       :text="el.title"
       :statistic="el.number"
       :icon="el.icon"
       />
+   </div>
      </div>
 </template>
 <script setup lang="ts">

@@ -1,3 +1,3 @@
 <template>
-    CHeader
+    <h1>start</h1>
 </template>
