@@ -1,88 +1,4 @@
-<script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay } from 'swiper/modules'
-import { bannerList } from '@/data/bannerList'
-import CButton from './Form/CButton.vue'
-import CBannerCarousel from './carousel/CBannerCarousel.vue'
-import 'swiper/css'
 
-const bannerStep = ref(0)
-const progress = ref(0)
-
-const timerTime = 3000
-const intervalSpeed = 30
-
-let timer: ReturnType<typeof setInterval> | null = null
-
-const bannerData = [
-  {
-    name: 'Tashkent region, Uzbekistan',
-    titles: {
-      uz: 'Amir Temur haykali',
-      ru: 'Статуя Амира Тимура',
-      en: 'Statue of Amir Temur'
-    },
-    desc: {
-      uz: "Amir Temur haykali – davlat arbobi va sarkarda, oʻzbek davlatchiligi asoschilaridan biri Amir Temurning bronzadan yasalgan otliq yodgorligi.",
-      ru: 'Статуя Амира Тимура — это бронзовый конный памятник Амиру Тимуру.',
-      en: 'The statue of Amir Temur is a bronze equestrian monument.'
-    },
-    image: '/images/Hero/Tashkent.jpeg'
-  },
-  {
-    name: 'Samarqand region, Uzbekistan',
-    titles: {
-      uz: 'Registon maydoni',
-      ru: 'Площадь Регистана',
-      en: 'Registan Square'
-    },
-    desc: {
-      uz: 'Mirzo Ulugbek davridan beri bu hudud Samarqand aholisi uchun asosiy maydon hisoblangan.',
-      ru: 'Со времён Мирзо Улугбека эта площадь считалась главной площадью Самарканда.',
-      en: 'Since the time of Mirzo Ulugbek, this area has been considered the main square.'
-    },
-    image: '/images/Hero/Samarkand.webp'
-  },
-  {
-    name: 'Bukhara region, Uzbekistan',
-    titles: {
-      uz: 'Minorai Kalon',
-      ru: 'Великая башня',
-      en: 'The Kalon Tower'
-    },
-    desc: {
-      uz: 'Minorayi Kalon, Arslonxon minorasi — Buxorodagi meʼmoriy yodgorlik.',
-      ru: 'Башня Калон является архитектурным памятником Бухары.',
-      en: 'The Kalon Tower is an architectural monument in Bukhara.'
-    },
-    image: '/images/Hero/Bukhara.jpeg'
-  }
-]
-
-const currentBanner = computed(() => bannerData[bannerStep.value])
-
-const nextBanner = () => {
-  bannerStep.value = (bannerStep.value + 1) % bannerData.length
-  progress.value = 0
-}
-
-onMounted(() => {
-  const progressStep = 100 / (timerTime / intervalSpeed)
-
-  timer = setInterval(() => {
-    progress.value += progressStep
-
-    if (progress.value >= 100) {
-      nextBanner()
-    }
-  }, intervalSpeed)
-})
-
-onUnmounted(() => {
-  i f (timer) clearInterval(timer)
-})
-</script>
 <template>
   <div class="min-h-screen relative flex flex-col bg-cover bg-center">
     <img
@@ -104,7 +20,7 @@ onUnmounted(() => {
         <i class="icon-map-pin"></i>
         {{ currentBanner.name }}
       </p>
-
+      
       <h1 class="text-white text-6xl font-bold my-8">
         {{ currentBanner.titles.uz }}
       </h1>
@@ -198,4 +114,88 @@ onUnmounted(() => {
   border-radius: 999px;
   transition: height 0.03s linear;
 }
-</style>
+</style><script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay } from 'swiper/modules'
+import { bannerList } from '@/data/bannerList'
+import CButton from './Form/CButton.vue'
+import CBannerCarousel from './carousel/CBannerCarousel.vue'
+import 'swiper/css'
+
+const bannerStep = ref(0)
+const progress = ref(0)
+
+const timerTime = 3000
+const intervalSpeed = 30
+
+let timer: ReturnType<typeof setInterval> | null = null
+
+const bannerData = [
+  {
+    name: 'Tashkent region, Uzbekistan',
+    titles: {
+      uz: 'Amir Temur haykali',
+      ru: 'Статуя Амира Тимура',
+      en: 'Statue of Amir Temur'
+    },
+    desc: {
+      uz: "Amir Temur haykali – davlat arbobi va sarkarda, oʻzbek davlatchiligi asoschilaridan biri Amir Temurning bronzadan yasalgan otliq yodgorligi.",
+      ru: 'Статуя Амира Тимура — это бронзовый конный памятник Амиру Тимуру.',
+      en: 'The statue of Amir Temur is a bronze equestrian monument.'
+    },
+    image: '/images/Hero/Tashkent.jpeg'
+  },
+  {
+    name: 'Samarqand region, Uzbekistan',
+    titles: {
+      uz: 'Registon maydoni',
+      ru: 'Площадь Регистана',
+      en: 'Registan Square'
+    },
+    desc: {
+      uz: 'Mirzo Ulugbek davridan beri bu hudud Samarqand aholisi uchun asosiy maydon hisoblangan.',
+      ru: 'Со времён Мирзо Улугбека эта площадь считалась главной площадью Самарканда.',
+      en: 'Since the time of Mirzo Ulugbek, this area has been considered the main square.'
+    },
+    image: '/images/Hero/Samarkand.webp'
+  },
+  {
+    name: 'Bukhara region, Uzbekistan',
+    titles: {
+      uz: 'Minorai Kalon',
+      ru: 'Великая башня',
+      en: 'The Kalon Tower'
+    },
+    desc: {
+      uz: 'Minorayi Kalon, Arslonxon minorasi — Buxorodagi meʼmoriy yodgorlik.',
+      ru: 'Башня Калон является архитектурным памятником Бухары.',
+      en: 'The Kalon Tower is an architectural monument in Bukhara.'
+    },
+    image: '/images/Hero/Bukhara.jpeg'
+  }
+]
+
+const currentBanner = computed(() => bannerData[bannerStep.value])
+
+const nextBanner = () => {
+  bannerStep.value = (bannerStep.value + 1) % bannerData.length
+  progress.value = 0
+}
+
+onMounted(() => {
+  const progressStep = 100 / (timerTime / intervalSpeed)
+
+  timer = setInterval(() => {
+    progress.value += progressStep
+
+    if (progress.value >= 100) {
+      nextBanner()
+    }
+  }, intervalSpeed)
+})
+
+onUnmounted(() => {
+  if (timer) clearInterval(timer)
+})
+</script>
