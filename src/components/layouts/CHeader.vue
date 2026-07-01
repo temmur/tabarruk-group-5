@@ -115,8 +115,8 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 const navList = ref([
     { name: 'Biz haqimizda', path: '/about' },
     { name: 'Davlatlar',     path: '/countries' },
-    { name: 'Dinlar',        path: '/religions' },
     { name: 'Umumiy xarita', path: '/map' },
+    { name: 'Dinlar',        path: '/religions' },
     { name: 'Yordam',        path: '/help' },
     { name: 'FAQ',           path: '/faq' },
 ])
