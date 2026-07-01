@@ -20,6 +20,11 @@ const router = createRouter({
             path: '/news',
             name: 'News',
             component: ()=> import('@/views/news/PNews.vue')
+        },
+        {
+          path: '/country/:id',
+          name: 'country-single',
+          component: ()=> import('@/views/countries/PSingle.vue')
         }
     ]
    }
