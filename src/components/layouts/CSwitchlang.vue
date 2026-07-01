@@ -1,12 +1,7 @@
 <template>
   <div ref="triggerRef" class="relative inline-block">
-    <!-- Selected language -->
     <button @click="toggleDropdown" class="selected-btn">
-      <img
-        :src="currentLanguage.flag"
-        :alt="currentLanguage.code"
-        class="selected-flag"
-      />
+      <img :src="currentLanguage.flag" :alt="currentLanguage.code" class="selected-flag" />
     </button>
 
     <Teleport to="body">
@@ -18,13 +13,7 @@
         leave-from-class="opacity-100 scale-100"
         leave-to-class="opacity-0 scale-95"
       >
-        <div
-          v-if="isOpen"
-          ref="dropdownRef"
-          :style="dropdownStyle"
-          class="dropdown-menu"
-        >
-          <!-- Top row -->
+        <div v-if="isOpen" ref="dropdownRef" :style="dropdownStyle" class="dropdown-menu">
           <div class="row">
             <button
               v-for="lang in topRow"
@@ -35,16 +24,9 @@
             >
               <img :src="lang.flag" :alt="lang.code" class="lang-flag" />
               <span class="lang-name">{{ lang.name }}</span>
-              <span
-                v-if="currentLanguage.code === lang.code"
-                class="check"
-              >
-                ✓
-              </span>
+              <span v-if="currentLanguage.code === lang.code" class="check">✓</span>
             </button>
           </div>
-
-          <!-- Bottom row -->
           <div class="row row-center">
             <button
               @click="selectLang(bottomRow)"
@@ -53,12 +35,7 @@
             >
               <img :src="bottomRow.flag" :alt="bottomRow.code" class="lang-flag" />
               <span class="lang-name">{{ bottomRow.name }}</span>
-              <span
-                v-if="currentLanguage.code === bottomRow.code"
-                class="check"
-              >
-                ✓
-              </span>
+              <span v-if="currentLanguage.code === bottomRow.code" class="check">✓</span>
             </button>
           </div>
         </div>
@@ -74,21 +51,9 @@ import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
 
 const languages = [
-  {
-    code: 'uz',
-    name: "O'zbekcha",
-    flag: '/images/language-icons/Uzbekistan.svg',
-  },
-  {
-    code: 'ru',
-    name: 'Русский',
-    flag: '/images/language-icons/Russia.svg',
-  },
-  {
-    code: 'en',
-    name: 'English',
-    flag: '/images/language-icons/UK.svg',
-  },
+  { code: 'uz', name: "O'zbekcha", flag: '/images/language-icons/Uzbekistan.svg' },
+  { code: 'ru', name: 'Русский',   flag: '/images/language-icons/Russia.svg' },
+  { code: 'en', name: 'English',   flag: '/images/language-icons/UK.svg' },
 ]
 
 const isOpen = ref(false)
@@ -96,12 +61,9 @@ const triggerRef = ref(null)
 const dropdownRef = ref(null)
 const dropdownStyle = ref({})
 
-const currentLanguage = computed(() => {
-  return (
-    languages.find(lang => lang.code === locale.value) ??
-    languages[0]
-  )
-})
+const currentLanguage = computed(() =>
+  languages.find(lang => lang.code === locale.value) ?? languages[0]
+)
 
 const topRow = computed(() => languages.slice(0, 2))
 const bottomRow = computed(() => languages[2])
@@ -109,16 +71,23 @@ const bottomRow = computed(() => languages[2])
 function toggleDropdown() {
   if (!isOpen.value && triggerRef.value) {
     const rect = triggerRef.value.getBoundingClientRect()
-
-    dropdownStyle.value = {
-      position: 'fixed',
-      top: `${rect.bottom + 8}px`,
-      left: `${rect.right - 100}px`,
-      transform: 'translateX(-100%)',
-      zIndex: 9999,
-    }
+    const isMobile = window.innerWidth < 1024
+    dropdownStyle.value = isMobile
+      ? {
+          position: 'fixed',
+          bottom: `${window.innerHeight - rect.top + 8}px`,
+          left: `${rect.left + rect.width / 2}px`,
+          transform: 'translateX(-50%)',
+          zIndex: 9999,
+        }
+      : {
+          position: 'fixed',
+          top: `${rect.bottom + 8}px`,
+          left: `${rect.right - 100}px`,
+          transform: 'translateX(-100%)',
+          zIndex: 9999,
+        }
   }
-
   isOpen.value = !isOpen.value
 }
 
@@ -129,24 +98,13 @@ function selectLang(lang) {
 }
 
 function handleClickOutside(event) {
-  const inTrigger =
-    triggerRef.value && triggerRef.value.contains(event.target)
-
-  const inDropdown =
-    dropdownRef.value && dropdownRef.value.contains(event.target)
-
-  if (!inTrigger && !inDropdown) {
-    isOpen.value = false
-  }
+  const inTrigger = triggerRef.value && triggerRef.value.contains(event.target)
+  const inDropdown = dropdownRef.value && dropdownRef.value.contains(event.target)
+  if (!inTrigger && !inDropdown) isOpen.value = false
 }
 
-onMounted(() => {
-  document.addEventListener('mousedown', handleClickOutside)
-})
-
-onUnmounted(() => {
-  document.removeEventListener('mousedown', handleClickOutside)
-})
+onMounted(() => document.addEventListener('mousedown', handleClickOutside))
+onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
 </script>
 
 <style scoped>
@@ -182,8 +140,6 @@ onUnmounted(() => {
   gap: 4px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   min-width: 280px;
-  margin-left: 110px;
-  margin-top: 9px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -245,5 +201,16 @@ onUnmounted(() => {
   font-size: 14px;
   font-weight: bold;
   margin-left: auto;
+}
+
+.dropdown-menu{
+  margin-left: 110px;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .dropdown-menu {
+    margin-left: 110px;
+  }
 }
 </style>
