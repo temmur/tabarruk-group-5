@@ -6,10 +6,12 @@
         ]"
     >
         <div class="container mx-auto flex items-center justify-between">
-            <img src="/images/slowlogo.png" alt="Logo" class="h-16 w-auto" />
+           <RouterLink to="/">
+             <img src="/images/slowlogo.png" alt="Logo" class="w-200px" />
+           </RouterLink>
 
             <!-- Desktop nav -->
-            <nav class="hidden lg:flex items-center gap-10">
+            <nav class="hidden lg:flex items-center gap-10 relative">
                 <template v-for="(el, idx) in navList" :key="idx">
                     <CCountry v-if="el.name === 'Davlatlar'" />
                     <span
@@ -24,11 +26,12 @@
                 <div class="w-px h-6 bg-white/30"></div>
                 <CSwitchlang />
                 <div class="w-px h-6 bg-white/30"></div>
-                <button class="text-white hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer">
+                <!-- <button class="text-white hover:text-gray-300 transition-colors bg-transparent border-none cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
                     </svg>
-                </button>
+                </button> -->
+                 <CInput class="z-[999] absolute -right-10"/>
             </nav>
 
             <!-- Mobile hamburger -->
@@ -52,7 +55,7 @@
 
                 <!-- Top: logo + close -->
                 <div class="flex items-center justify-between">
-                    <img src="/images/slowlogo.png" alt="Logo" class="h-14 w-auto" />
+                    <img src="/images/slowlogo.png" alt="Logo" class="h-14 w-auto " />
                     <button @click="mobileOpen = false" class="text-white bg-transparent border-none cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -61,13 +64,7 @@
                 </div>
 
                 <!-- Search -->
-                <div class="mt-5">
-                    <input
-                        type="text"
-                        placeholder="Qidiruv"
-                        class="w-full bg-[#0a1128] text-white placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none border border-white/10"
-                    />
-                </div>
+               
 
                 <!-- Nav links -->
                 <nav class="flex flex-col gap-1 mt-6 flex-1 overflow-y-auto">
@@ -102,6 +99,7 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import CReligion from '@/components/layouts/CReligion.vue'
 import CSwitchlang from '@/components/layouts/CSwitchlang.vue'
 import CCountry from '@/components/layouts/CCountry.vue'
+import CInput from '@/components/Form/CInput.vue'
 
 const religionRef = ref(null)
 const isScrolled = ref(false)

@@ -2,7 +2,7 @@
   <div class="flex items-center gap-5">
     
  <div 
-  class="flex items-center border border-[#474957] backdrop-blur-xl rounded-md overflow-hidden transition-all duration-500 ease-in-out w-145 h-11 focus-within:border-white"
+  class="flex items-center border border-[#474957] backdrop-blur-xl rounded-md overflow-hidden min-w-[780px] transition-all duration-500 ease-in-out w-145 h-11 focus-within:border-white"
   :class="openInput ? 'px-3 py-1.5 opacity-100' : 'max-w-0 px-0 py-1.5 opacity-0 border-transparent'"
 >
   <slot name="prefix"></slot>
