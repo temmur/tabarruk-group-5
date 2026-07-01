@@ -15,6 +15,11 @@ const router = createRouter({
             name: 'Home',
             alias: ['Home', 'Main'],
             component: ()=> import('@/views/PHome.vue')
+        },
+        {
+            path: '/news',
+            name: 'News',
+            component: ()=> import('@/views/news/PNews.vue')
         }
     ]
    }
