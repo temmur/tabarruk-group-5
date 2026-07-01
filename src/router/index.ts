@@ -15,6 +15,11 @@ const router = createRouter({
             name: 'Home',
             alias: ['Home', 'Main'],
             component: ()=> import('@/views/PHome.vue')
+        },
+        {
+          path: '/country/:id',
+          name: 'country-single',
+          component: ()=> import('@/views/countries/PSingle.vue')
         }
     ]
    }

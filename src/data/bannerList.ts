@@ -49,4 +49,4 @@ export const bannerList = [
         describtion: 'Aqirtas saroy majmuasi',
         image: 'public/images/destinations/Aqirtas saroy majmuasi.webp'
     }
-]
+]   
