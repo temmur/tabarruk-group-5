@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import PPLayground from '@/views/PPLayground.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +25,11 @@ const router = createRouter({
           path: '/country/:id',
           name: 'country-single',
           component: ()=> import('@/views/countries/PSingle.vue')
+        },
+        {
+          path: '/playground',
+          name: 'playground',
+          component: PPLayground
         }
     ]
    }

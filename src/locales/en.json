@@ -1,7 +1,5 @@
 {
     "hello": "Hello",
-    "nav":{
-        
-    }
+    "clearBtn": "Clear"
     
 }
