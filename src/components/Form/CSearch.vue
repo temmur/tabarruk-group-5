@@ -12,7 +12,7 @@
   </CInput>
   <div
   v-if="val.length && isInputOpen"
-  class="max-h-[300px] min-h-[200px] border border-[#474957] overflow-scroll bg-[#4e535c]/50 py-3 pl-3 rounded-xl w-220 absolute -bottom-57 right-10 mt-2 backdrop-blur-2xl">
+  class="max-h-[300px] min-h-[200px] border border-[#474957] overflow-scroll bg-[#4e535c]/50 py-3 pl-3 rounded-xl w-220 absolute -bottom-64 right-10 mt-2 backdrop-blur-2xl">
     <ul v-if="filteredData.length">
      <li
   v-for="(el, idx) in filteredData"
