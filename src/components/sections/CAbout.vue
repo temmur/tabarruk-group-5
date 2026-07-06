@@ -86,7 +86,7 @@
       </div>
     </div>
   </div>
-        
+       
         <div class="flex gap-10">
 
             <CButton class="font-bold text-3xl w-35 h-13 " :text="$t('index-us-litle')"/> 
