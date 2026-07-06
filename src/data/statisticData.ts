@@ -15,3 +15,5 @@ export const statistic = [
             icon:'./images/mosque/Mask group (1).svg'
         }
 ]
+
+
