@@ -1,7 +1,8 @@
 {
     "hello": "Hello",
-    "nav":{
-        
-    }
-    
+    "about-us-title" : "About us",
+              "text-us-title": "Explore the valuable, historical, and heritage sites of Turkic countries through a contest of articles, photos, and videos. Discover the beauty of ancient ruins, breathtaking mosques, medieval fortresses, and intricate tile work.",
+              "home-us-text":"Our partners",
+              "index-us-litle":"Look  →",
+              "css-like-title":"More about us  →"
 }
