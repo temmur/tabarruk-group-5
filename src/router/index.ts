@@ -1,3 +1,4 @@
+
 import { createRouter, createWebHistory } from 'vue-router'
 import PPLayground from '@/views/PPLayground.vue'
 
@@ -47,6 +48,15 @@ import PPLayground from '@/views/PPLayground.vue'
       ]
     }
   ],
+
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0, left: 0 } 
+    }
+  }
 })
+
 
 export default router
