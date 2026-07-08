@@ -98,7 +98,7 @@
          :style="{ transform: `translateX(-${currentIndex * 20}%)` }">
       
       <div v-for="(img, index) in images" :key="index" 
-           class="group relative h-[500px] w-[20%] shrink-0 transition-all duration-500 ease-in-out hover:w-[65%] cursor-pointer overflow-hidden rounded-2xl">
+           class="group relative h-[400px] w-[20%] shrink-0 transition-all duration-500 ease-in-out hover:w-[65%] cursor-pointer overflow-hidden rounded-2xl">
         
         <img :src="img" class="w-full h-full object-cover" alt="slide">
         
@@ -115,7 +115,7 @@
     </button>
   </div>
     </div>
-    <div class="grid grid-cols-4 container gap-4">
+    <div class="grid grid-cols-4 container gap-4 ">
        <CAboutcard class="w-full" v-for="(el, idx) in statistic"
       :key="idx"
       :text="el.title"
