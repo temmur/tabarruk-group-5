@@ -30,10 +30,13 @@
 </div>
 <div>
 <router-link to="/news">
-    <CButton variant="secondary" class="mt-4 capitalize grid justify-items-end ml-60 justify-end" size="lg" text="biz haqimizda batafsil        →" />
+    <CButton variant="secondary" class="mt-4 capitalize" size="lg" text="biz haqimizda batafsil " />
 </router-link>
+
  </div>
  </div>
+ 
+ 
 </div>
 </template>
 <script setup lang="ts">
