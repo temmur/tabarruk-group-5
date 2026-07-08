@@ -4,13 +4,14 @@
      <div class=" flex flex-col justify-center">
         <div>
             <h1 class="text-white text-4xl font-semibold  mb-7 border-b-2 border-red-500 inline-block p-2">
-                Biz haqimizda
+                {{ $t("about-us-title") }}
             </h1>
             <p class="text-white text-xl mb-10">
-                Maqolalar, fotosuratlar va videolar tanlovi orqali turkiy  mamlakatlarning qimmatli, tarixiy va  merosi joylarini o'rganing.  Qadimgi xarobalar, hayratlanarli masjidlar, o'rta asr qal'alari va <br> murakkab koshinlar go'zalligini kashf eting.
-            </p>
+              
+             {{ $t("text-us-title") }} 
+                          </p>
             <h1 class="text-white text-2xl font-bold ">
-                Bizning qo'llab-quvvatlovchilar
+               {{ $t("home-us-text") }}
             </h1>
             <div>
             </div>
@@ -87,9 +88,11 @@
   </div>
         
         <div class="flex gap-10">
-            <div><CButton class="font-bold text-3xl w-35 h-13 " text="Ko'rish"/></div> 
-           <div>            <CButton class="font-bold text-3xl w-35 h-13 w-70 bg-grey-500 bg-gray-800 hover:bg-gray-900 text-2xl " text="biz haqimizda batafsil " />
-</div>
+
+            <CButton class="font-bold text-3xl w-35 h-13 " :text="$t('index-us-litle')"/> 
+           
+                      <CButton class="font-bold text-3xl w-35 h-13 w-70 bg-grey-500 bg-gray-800 hover:bg-gray-900 text-2xl " :text="$t('css-like-title')" />
+
         </div>
     </div>
     </div>
@@ -98,7 +101,7 @@
          :style="{ transform: `translateX(-${currentIndex * 20}%)` }">
       
       <div v-for="(img, index) in images" :key="index" 
-           class="group relative h-[500px] w-[20%] shrink-0 transition-all duration-500 ease-in-out hover:w-[65%] cursor-pointer overflow-hidden rounded-2xl">
+           class="group relative h-[400px] w-[20%] shrink-0 transition-all duration-500 ease-in-out hover:w-[65%] cursor-pointer overflow-hidden rounded-2xl">
         
         <img :src="img" class="w-full h-full object-cover" alt="slide">
         
@@ -115,7 +118,7 @@
     </button>
   </div>
     </div>
-    <div class="grid grid-cols-4 container gap-4">
+    <div class="grid grid-cols-4 container gap-4 ">
        <CAboutcard class="w-full" v-for="(el, idx) in statistic"
       :key="idx"
       :text="el.title"
@@ -132,6 +135,7 @@ import { statistic } from '@/data/statisticData';
 import CAboutcard from '@/components/Card/CAboutcard.vue';
 import {ref} from 'vue'
 import CButton from '../Form/CButton.vue';
+import { title } from 'process';
 const active = ref(null)
 
 const images = ref([
