@@ -22,7 +22,7 @@ export const newsList = [
     },
     {
         images:'https://admin.tabarrukziyorat.uz/media/news/Screenshot_1.jpg',
-        title:'"Treasure of Turkish Literature" collection of works',
+        title:'Treasure of Turkish Literature" collection of works',
         string:'',
         date:'07.12.2023', 
         id: 4

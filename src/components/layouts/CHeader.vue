@@ -31,7 +31,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
                     </svg>
                 </button> -->
-                 <CInput class="z-[999] absolute -right-10"/>
+                <CSearch class=""/>
             </nav>
 
             <!-- Mobile hamburger -->
@@ -99,7 +99,7 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import CReligion from '@/components/layouts/CReligion.vue'
 import CSwitchlang from '@/components/layouts/CSwitchlang.vue'
 import CCountry from '@/components/layouts/CCountry.vue'
-import CInput from '@/components/Form/CInput.vue'
+import CSearch from '../Form/CSearch.vue'
 
 const religionRef = ref(null)
 const isScrolled = ref(false)

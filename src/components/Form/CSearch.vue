@@ -1,6 +1,8 @@
 <template>
-<div class="mt-40 bg-[url('https://media.istockphoto.com/id/1140829787/photo/sunset-at-savannah-plains.jpg?s=612x612&w=0&k=20&c=z1e1kvLk52k10-2hT-mdnO_EAmT8BmnAm3qWP9vZ4UQ=')] min-h-screen">
-  <CInput v-model="val" >
+<div class="relative">
+  <CInput v-model="val"
+  @toggleInput="handleToggle"
+  >
     <template #suffix>
       <button 
       @click="val = ``"
@@ -9,13 +11,13 @@
     </template>
   </CInput>
   <div
-  v-if="val.length"
-  class="max-h-[300px] min-h-[200px] border border-[#474957] overflow-scroll bg-[#4e535c]/50 py-3 pl-3 rounded-xl w-145 mt-2 backdrop-blur-2xl">
+  v-if="val.length && isInputOpen"
+  class="max-h-[300px] min-h-[200px] border border-[#474957] overflow-scroll bg-[#4e535c]/50 py-3 pl-3 rounded-xl w-220 absolute -bottom-64 right-10 mt-2 backdrop-blur-2xl">
     <ul v-if="filteredData.length">
      <li
   v-for="(el, idx) in filteredData"
   :key="idx"
-  class="border-b py-2 first:pt-0 text-white border-b-[#545560]/20 font-light cursor-pointer"
+  class="border-b py-2 first:pt-0 text-white border-b-[#545560] font-light cursor-pointer"
   v-html="highlightText(el.title)"
 ></li>
     </ul>
@@ -33,7 +35,11 @@ import { onMounted, ref, computed } from 'vue';
 import CInput from '@/components/Form/CInput.vue';
 
 const val = ref('')
+const isInputOpen = ref(false)
 
+function handleToggle(value: boolean) {
+  isInputOpen.value = value
+}
 
 const productsData = ref<any[]>([])
 

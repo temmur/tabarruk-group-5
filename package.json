@@ -13,6 +13,7 @@
   "dependencies": {
     "@syncfusion/ej2-vue-notifications": "^33.2.7",
     "@tailwindcss/vite": "^4.3.0",
+    "lucide-vue-next": "^1.0.0",
     "swiper": "^12.2.0",
     "vue": "^3.5.32",
     "vue-i18n": "^11.4.6",
