@@ -12,13 +12,13 @@
       <div class="flex animate-marquee-right gap-7 hover:[animation-play-state:paused]">
         <img v-for="(img, i) in [...images, ...images, ...images]" :key="'r-'+i" 
              :src="img" 
-             class="w-85 h-50 object-cover rounded-2xl flex-shrink-0" />
+             class="w-85 h-50 object-cover rounded-2xl flex-shrink-0 " />
       </div>
     </div>
   </div>
-</template>
+</template> 
 
-<script setup>
+<script setup lang="ts">
 const images = [
   'https://admin.tabarrukziyorat.uz/media/country_media_images/027_Samarkand_Guri-Amir_Mausoleum.jpg',
   'https://admin.tabarrukziyorat.uz/media/country_media_images/%D1%87%D0%B0%D1%88%D0%BC%D0%B0_10.jpg',
@@ -28,7 +28,7 @@ const images = [
   'https://admin.tabarrukziyorat.uz/media/country_media_images/20._Ichan_Qala_2_2.jpg',
   'https://admin.tabarrukziyorat.uz/media/country_media_images/shutterstock_1544283224.jpg',
   'https://admin.tabarrukziyorat.uz/media/country_media_images/shutterstock_1086403388.jpg',
-  'https://admin.tabarrukziyorat.uz/media/country_media_images/00.jpg'
+  'https://admin.tabarrukziyorat.uz/media/country_media_images/00.jpg',
 ];
 </script>
 
@@ -48,10 +48,10 @@ const images = [
 }
 
 .animate-marquee-left {
-  animation: marquee-left 85s linear infinite;
+  animation: marquee-left 95s linear infinite;
 }
 
 .animate-marquee-right {
-  animation: marquee-right 85s linear infinite;
+  animation: marquee-right 95s linear infinite;
 }
 </style>
