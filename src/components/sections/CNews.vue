@@ -12,7 +12,7 @@
         <CNewsCard/>  
     </div>
     <div>
-                    <CButton class="font-bold text-3xl w-35 h-13 w-70 bg-grey-500 bg-gray-800 hover:bg-gray-900 text-2xl " text="biz haqimizda batafsil " />
+    <CButton class="font-bold text-3xl w-35 h-13 w-70 bg-grey-500 bg-gray-800 hover:bg-gray-900 text-2xl " text="biz haqimizda batafsil " />
 
     </div>
  

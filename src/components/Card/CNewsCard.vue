@@ -27,6 +27,7 @@
         <p class="line-clamp-2">Interview with Ambassador Kubanychbek Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, molestiae? Corrupti accusantium, libero saepe labore nihil exercitationem et aut eius nobis dignissimos! Nobis, impedit architecto nihil iusto obcaecati molestiae nemo?</p>
         <p class="text-gray-400">2025-02-03</p>
     </div>
+   
 </div>
 <div>
 <router-link to="/news">
@@ -44,5 +45,6 @@
 import {ref} from 'vue'
 import { newsList } from '@/data/Newsdata';
 import CButton from '../Form/CButton.vue';
+import CFontkarusel from './CFontkarusel.vue';
 const newsData = ref(newsList)  
 </script>
