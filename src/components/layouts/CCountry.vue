@@ -55,16 +55,17 @@
 </template>
 
 <script setup>
+
 import { ref, onMounted, onUnmounted } from 'vue'
 
 // Davlatlar ro'yxati — flag va count ni o'zingiz to'ldiring
 const countries = [
-  { name: "O'zbekiston", count: 175, flag: '/images/dropdown-flag-icons/Uzbekistan.svg' },
-  { name: 'Turkiya',     count: 150, flag: '/images/dropdown-flag-icons/Turkiye.svg' },
-  { name: 'Turkmaniston',count: 20,  flag: '/images/dropdown-flag-icons/Turkmenistan.svg' },
-  { name: 'Ozarbayjon',  count: 0,   flag: '/images/dropdown-flag-icons/Azerbaijan.svg' },
-  { name: "Qozog'iston", count: 51,  flag: '/images/dropdown-flag-icons/Kazakhstan.svg' },
-  { name: "Qirg'iziston",count: 19,  flag: '/images/dropdown-flag-icons/Kyrgyzstan.svg' },
+  { name: "O'zbekiston", count: 175, flag: '/images/dropdown-flag-icons/Uzbekistan.svg', id: 1 },
+  { name: 'Turkiya',     count: 150, flag: '/images/dropdown-flag-icons/Turkiye.svg', id: 2 },
+  { name: 'Turkmaniston',count: 20,  flag: '/images/dropdown-flag-icons/Turkmenistan.svg', id: 3 },
+  { name: 'Ozarbayjon',  count: 0,   flag: '/images/dropdown-flag-icons/Azerbaijan.svg', id: 4 },
+  { name: "Qozog'iston", count: 51,  flag: '/images/dropdown-flag-icons/Kazakhstan.svg', id: 5 },
+  { name: "Qirg'iziston",count: 19,  flag: '/images/dropdown-flag-icons/Kyrgyzstan.svg', id: 6 },
   { name: 'Vengriya',    count: 14,  flag: '/images/dropdown-flag-icons/Hungary.svg' },
 ]
 
