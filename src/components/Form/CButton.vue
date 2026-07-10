@@ -30,7 +30,7 @@ import {defineProps} from 'vue';
     }
     const sizes = {
         md: 'px-4 py-2 text-sm',
-        lg: 'px-6 py-3 text-lg',
-        xl: 'px-10 py-3 text-xl'
+        lg: 'px-6 py-3 text-lg', 
+        xl: 'px-10 py-3 text-xl' 
     }
     </script>
