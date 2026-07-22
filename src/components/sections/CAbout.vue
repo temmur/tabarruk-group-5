@@ -135,7 +135,6 @@ import { statistic } from '@/data/statisticData';
 import CAboutcard from '@/components/Card/CAboutcard.vue';
 import {ref} from 'vue'
 import CButton from '../Form/CButton.vue';
-import { title } from 'process';
 const active = ref(null)
 
 const images = ref([
