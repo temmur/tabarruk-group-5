@@ -27,18 +27,24 @@
         <p class="line-clamp-2">Interview with Ambassador Kubanychbek Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, molestiae? Corrupti accusantium, libero saepe labore nihil exercitationem et aut eius nobis dignissimos! Nobis, impedit architecto nihil iusto obcaecati molestiae nemo?</p>
         <p class="text-gray-400">2025-02-03</p>
     </div>
+   
 </div>
 <div>
 <router-link to="/news">
-    <CButton variant="secondary" class="mt-4 capitalize grid justify-items-end ml-60 justify-end" size="lg" text="biz haqimizda batafsil        →" />
+    <CButton variant="secondary" class="mt-4 capitalize" size="lg" text="biz haqimizda batafsil " />
 </router-link>
+
  </div>
  </div>
+ 
+ 
 </div>
+
 </template>
 <script setup lang="ts">
 import {ref} from 'vue'
 import { newsList } from '@/data/Newsdata';
 import CButton from '../Form/CButton.vue';
+import CFontkarusel from './CFontkarusel.vue';
 const newsData = ref(newsList)  
 </script>

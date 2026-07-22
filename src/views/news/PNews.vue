@@ -40,8 +40,10 @@
            </div>
         </div>
     </div>
+    
 </template>
 <script setup lang="ts">
+
 import { newsList } from '@/data/Newsdata';
 
 </script>

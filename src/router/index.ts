@@ -11,6 +11,22 @@ import PPLayground from '@/views/PPLayground.vue'
       component: () => import('@/layouts/LDefault.vue'),
       children: [
         {
+            path: '/',
+            name: 'Home',
+            alias: ['Home', 'Main'],
+            component: ()=> import('@/views/PHome.vue')
+        },
+        {
+            path: '/news',
+            name: 'News',
+            component: ()=> import('@/views/news/PNews.vue')
+        },
+        {
+          path: '/country/:id',
+          name: 'country-single',
+          component: ()=> import('@/views/countries/PSingle.vue')
+        },
+        {
           path: '', // Changed from '/' to '' so it inherits the parent path
           name: 'Home',
           component: () => import('@/views/PHome.vue'),
@@ -49,6 +65,9 @@ import PPLayground from '@/views/PPLayground.vue'
           path: 'help',
           name: 'Help',
           component: () => import('@/views/PHelp.vue')
+          path: 'faq',
+          name: 'faq',
+          component: ()=> import('@/views/PFaq.vue')
         }
       ]
     }
