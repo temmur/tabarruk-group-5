@@ -60,6 +60,11 @@ import PPLayground from '@/views/PPLayground.vue'
           name: 'playground',
           component: PPLayground,
           meta: { breadcrumb: 'Playground' }
+        },
+        {
+          path: 'faq',
+          name: 'faq',
+          component: ()=> import('@/views/PFaq.vue')
         }
       ]
     }

@@ -15,7 +15,7 @@
              class="w-85 h-50 object-cover rounded-2xl flex-shrink-0 " />
       </div>
     </div>
-  </div>
+  </div> 
 </template> 
 
 <script setup lang="ts">
@@ -55,3 +55,6 @@ const images = [
   animation: marquee-right 95s linear infinite;
 }
 </style>
+
+
+

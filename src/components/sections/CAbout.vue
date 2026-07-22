@@ -53,7 +53,7 @@
         </div>
       </div>
 
-     
+      
       <div
         class="flex items-center relative transition-all duration-500"
         :class="active === 1 ? '' : ''"
