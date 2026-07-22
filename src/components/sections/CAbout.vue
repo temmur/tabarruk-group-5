@@ -86,7 +86,7 @@
       </div>
     </div>
   </div>
-        
+       
         <div class="flex gap-10">
 
             <CButton class="font-bold text-3xl w-35 h-13 " :text="$t('index-us-litle')"/> 
@@ -135,7 +135,6 @@ import { statistic } from '@/data/statisticData';
 import CAboutcard from '@/components/Card/CAboutcard.vue';
 import {ref} from 'vue'
 import CButton from '../Form/CButton.vue';
-import { title } from 'process';
 const active = ref(null)
 
 const images = ref([

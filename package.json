@@ -17,7 +17,9 @@
     "swiper": "^12.2.0",
     "vue": "^3.5.32",
     "vue-i18n": "^11.4.6",
-    "vue-router": "^5.1.0"
+    "vue-recaptcha": "^3.0.0-alpha.6",
+    "vue-router": "^5.1.0",
+    "vue3-recaptcha-v2": "^2.1.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",

@@ -11,18 +11,14 @@
           <i class="icon-play"></i>
         </template>
       </CButton>
-  </div>
-  <PSCarousel :items="bannerList" />
+  </div> 
 
 </template>
 <script setup lang="ts">
 import {ref, computed} from 'vue'                     
 import {useRoute} from 'vue-router'
 import { countries } from '@/data/countriesList';
-import CCountriesFlags from '@/components/sections/CCountries-flags.vue';
 import CButton from '@/components/Form/CButton.vue';
-import { count } from 'console';
-  import PSCarousel from './PSCarousel.vue';  
 const route = useRoute()
 
 
